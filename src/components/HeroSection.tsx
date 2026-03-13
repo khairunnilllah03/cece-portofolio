@@ -12,19 +12,23 @@ export default function HeroSection() {
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 pb-10 bg-transparent">
       
       <div className="container mx-auto px-4 relative z-10">
-        {/* KOTAK UTAMA */}
+        {/* KOTAK UTAMA dengan efek Shadow Glow saat Hover */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="max-w-6xl mx-auto rounded-[3rem] border transition-all duration-500 shadow-2xl overflow-hidden p-8 md:p-16
-            bg-cyan-50/80 backdrop-blur-md border-cyan-200 hover:border-cyan-400/50 hover:shadow-cyan-500/10
-            dark:bg-[#112240]/60 dark:border-cyan-900/50 dark:hover:border-cyan-400/40"
+            bg-cyan-50/80 backdrop-blur-md border-cyan-200 
+            hover:border-cyan-400/50 hover:shadow-[0_0_50px_rgba(6,182,212,0.3)]
+            dark:bg-[#112240]/60 dark:border-cyan-900/50 dark:hover:border-cyan-400/40 dark:hover:shadow-[0_0_50px_rgba(34,211,238,0.2)]"
         >
           <div className="grid md:grid-cols-2 gap-12 items-center">
             
-            {/* FOTO PROFIL */}
+            {/* FOTO PROFIL dengan Layer Cahaya di Belakang */}
             <div className="relative flex justify-center group">
+              {/* Efek Cahaya (Glow) di belakang foto */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-[2.5rem] blur opacity-20 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
+              
               <div className="relative z-10 aspect-square w-full max-w-[350px] rounded-[2rem] overflow-hidden border-4 border-white dark:border-cyan-400 shadow-2xl bg-white dark:bg-[#0a192f] transition-all duration-500 group-hover:scale-[1.03] group-hover:rotate-2">
                 <img 
                   src="/clarence.jpg" 
@@ -44,9 +48,10 @@ export default function HeroSection() {
                 Welcome to my portfolio🐚
               </div>
 
+              {/* Nama dengan Efek Neon Glow */}
               <h1 className="text-4xl md:text-6xl font-black leading-tight italic text-slate-900 dark:text-white">
                 Hi, <br />
-                <span className="text-cyan-600 dark:text-cyan-400">
+                <span className="text-cyan-600 dark:text-cyan-400 drop-shadow-[0_0_15px_rgba(8,145,178,0.4)] dark:drop-shadow-[0_0_20px_rgba(34,211,238,0.6)]">
                   I'm Clarence 🐬
                 </span>
               </h1>
@@ -101,12 +106,12 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* TOMBOL SCROLL DOWN */}
+      {/* TOMBOL SCROLL DOWN dengan Animasi Halus */}
       <motion.button
         onClick={scrollToAbout}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 p-4 rounded-full bg-cyan-600 text-white cursor-pointer shadow-2xl z-20 transition-transform hover:scale-110"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
+        animate={{ y: [0, 12, 0] }}
+        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
       >
         <ArrowDown className="h-5 w-5" />
       </motion.button>
