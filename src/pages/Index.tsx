@@ -14,20 +14,26 @@ interface IndexProps {
 
 const Index = ({ isDark, toggleTheme }: IndexProps) => {
   return (
-    // bg-transparent adalah kunci agar background di App.tsx kelihatan
+    // bg-transparent tetap dipertahankan biar background laut di App.tsx kelihatan
     <div className="min-h-screen bg-transparent text-foreground">
       <Navbar isDark={isDark} toggleTheme={toggleTheme} />
       
-      <main>
+      <main className="relative z-10">
         <HeroSection />
-        <AboutSection />
+        
+        {/* Tambahkan isDark={isDark} ke semua section yang ingin bisa berubah warna */}
+        <AboutSection /> 
         <SkillsSection />
         <ProjectsSection />
-        <CertificatesSection />
+        
+        {/* INI YANG PALING PENTING BUAT SERTIFIKAT KAMU */}
+        <CertificatesSection isDark={isDark} />
+        
         <ContactSection />
       </main>
       
-      <Footer />
+      {/* Footer juga dikasih isDark biar warnanya sinkron */}
+      <Footer isDark={isDark} />
     </div>
   );
 };

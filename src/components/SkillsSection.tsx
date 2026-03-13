@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { BookOpen, Code2, Layout, Search, Users, Monitor, FileText } from 'lucide-react';
+import { BookOpen, Code2, Layout, Search, Users, Monitor, FileText, Zap } from 'lucide-react';
 
 const mainSkills = [
   { name: 'Scientific Research', level: 95, icon: Search },
@@ -17,16 +17,23 @@ const academicSkills = [
     color: 'from-blue-600 to-cyan-400' 
   },
   { 
-    name: 'Social Science (IPS)', 
-    desc: 'Sociology, History, Psychology', 
-    level: 90, 
+    name: 'People & Social', 
+    desc: 'A friendly social butterfly who easily connects with anyone and brings positive energy.', 
+    level: 88, 
     icon: Users,
-    color: 'from-blue-500 to-indigo-400'
+    color: 'from-pink-500 to-rose-400'
+  },
+  { 
+    name: 'Active & Proactive', 
+    desc: 'Highly energetic person who loves taking initiative and staying active in various activities.', 
+    level: 89, 
+    icon: Zap,
+    color: 'from-orange-500 to-amber-400'
   },
   { 
     name: 'IT & Digital', 
     desc: 'Web Dev, Programming, Tools', 
-    level: 90, 
+    level: 86, 
     icon: Monitor,
     color: 'from-cyan-500 to-blue-400'
   },
@@ -88,25 +95,25 @@ export default function SkillsSection() {
             ))}
           </div>
 
-          {/* ACADEMIC SKILLS */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* ACADEMIC & SOCIAL SKILLS - Sekarang 4 Kolom */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {academicSkills.map((skill, index) => (
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.02 }}
                 className="p-6 rounded-[2rem] bg-white/60 dark:bg-[#0a192f] border border-cyan-100 dark:border-white/5 shadow-lg transition-all hover:shadow-cyan-500/10 group"
               >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className={`p-3 rounded-2xl bg-gradient-to-br ${skill.color} shadow-lg transition-transform group-hover:rotate-12`}>
+                <div className="flex flex-col gap-4 mb-4">
+                  <div className={`w-fit p-3 rounded-2xl bg-gradient-to-br ${skill.color} shadow-lg transition-transform group-hover:rotate-12`}>
                     <skill.icon className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-slate-900 dark:text-white font-black italic leading-none mb-1">{skill.name}</h4>
-                    <p className="text-[9px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest">{skill.desc}</p>
+                    <h4 className="text-slate-900 dark:text-white font-black italic text-sm mb-2 uppercase">{skill.name}</h4>
+                    <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold leading-relaxed">{skill.desc}</p>
                   </div>
                 </div>
                 
-                <div className="h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden mt-4">
+                <div className="h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden mt-auto">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
