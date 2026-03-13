@@ -50,7 +50,7 @@ export default function HeroSection() {
 
               {/* Nama dengan Efek Neon Glow */}
               <h1 className="text-4xl md:text-6xl font-black leading-tight italic text-slate-900 dark:text-white">
-                Hi, <br />
+                Hai👋🏻, <br />
                 <span className="text-cyan-600 dark:text-cyan-400 drop-shadow-[0_0_15px_rgba(8,145,178,0.4)] dark:drop-shadow-[0_0_20px_rgba(34,211,238,0.6)]">
                   I'm Clarence 🐬
                 </span>
