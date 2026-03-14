@@ -4,9 +4,9 @@ import { Button } from '@/components/ui/button';
 
 const projects = [
   {
-    title: 'Analisis Yuridis terhadap Penanganan Perkara Jinayat oleh Kepolisian di Wilayah Hukum Polres Nagan Raya',
-    description: 'Published in International Journal of Islamic History and Culture (IJIHC). Research on the implementation of Qanun Jinayat and police jurisdiction.',
-    tags: ['Published Journal', 'Legal Research', 'IJIHC'],
+    title: 'The Digitalization Process of Manuscripts As Preservation And Salvage of Islamic Historical Information Sources In Aceh',
+    description: 'A comprehensive research on the digitalization efforts of ancient manuscripts in Aceh as a vital step in preserving and salvaging Islamic historical information sources for future generations.',
+    tags: ['Published Journal', 'Digital Preservation', 'Islamic History'],
     image: '/images/manuskrip.jpg',
     icon: <BookOpen className="h-6 w-6" />,
     link: 'https://journal.ar-raniry.ac.id/index.php/IJIHC/article/view/7509',
@@ -49,7 +49,6 @@ export default function ProjectsSection() {
             <h2 className="text-3xl md:text-5xl font-black italic text-slate-900 dark:text-white mb-4">
               Research & Publications
             </h2>
-            {/* Animasi Garis Bawah yang Melebar */}
             <div className="w-20 h-1.5 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto rounded-full transition-all duration-700 group-hover/main:w-48" />
           </div>
 
@@ -59,7 +58,6 @@ export default function ProjectsSection() {
                 <div className="h-full flex flex-col rounded-[2.5rem] bg-white/80 dark:bg-[#0a192f] border border-cyan-100 dark:border-white/5 shadow-xl overflow-hidden transition-all duration-500 
                   hover:-translate-y-3 hover:border-cyan-400 hover:shadow-[0_20px_40px_rgba(6,182,212,0.25)]">
                   
-                  {/* IMAGE SECTION DENGAN FLOATING TAGS */}
                   <div className="relative h-56 w-full overflow-hidden">
                     <img 
                       src={project.image} 
@@ -67,7 +65,6 @@ export default function ProjectsSection() {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     
-                    {/* Overlay Tag yang Muncul Pas Hover */}
                     <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                        <div className="flex flex-wrap gap-2">
                          {project.tags.map((tag) => (
@@ -88,7 +85,6 @@ export default function ProjectsSection() {
                       {project.title}
                     </h3>
                     
-                    {/* Tags Kecil di bawah Judul (Tetap ada buat estetik) */}
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.slice(0, 2).map((tag) => (
                         <span key={tag} className="text-[10px] font-bold text-cyan-600/70 dark:text-cyan-400/70 uppercase tracking-widest">
